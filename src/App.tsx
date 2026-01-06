@@ -34,7 +34,7 @@ function App() {
 
 	return (
 		<main className="min-h-screen dark:bg-zinc-800 dark:text-white">
-			<section className="max-w-[85rem] h-screen w-auto flex flex-col gap-y-8 justify-center items-center p-4">
+			<section className="max-w-[85rem] h-screen mx-auto flex flex-col gap-y-8 justify-center items-center p-4">
 				<h1 className="text-2xl font-bold text-center">{currentQuestion}</h1>
 				<section className="flex flex-col md:flex-row md:gap-x-4 gap-y-4">
 					<button
