@@ -36,21 +36,23 @@ function App() {
 		<main className="min-h-screen dark:bg-zinc-800 dark:text-white">
 			<section className="max-w-[85rem] h-screen w-auto flex flex-col gap-y-8 justify-center items-center p-4">
 				<h1 className="text-2xl font-bold text-center">{currentQuestion}</h1>
-				<button
-					className="px-4 py-2 rounded-sm bg-blue-500 cursor-pointer"
-					onClick={technicalNext}>
-					Technical
-				</button>
-				<button
-					className="px-4 py-2 rounded-sm bg-blue-500 cursor-pointer"
-					onClick={behaviorNext}>
-					Behavior
-				</button>
-				<button
-					className="px-4 py-2 rounded-sm bg-blue-500 cursor-pointer"
-					onClick={handleNext}>
-					Random
-				</button>
+				<section className="flex flex-col md:flex-row md:gap-x-4 gap-y-4">
+					<button
+						className="px-4 py-2 rounded-sm bg-blue-500 cursor-pointer"
+						onClick={technicalNext}>
+						Technical
+					</button>
+					<button
+						className="px-4 py-2 rounded-sm bg-blue-500 cursor-pointer"
+						onClick={behaviorNext}>
+						Behavior
+					</button>
+					<button
+						className="px-4 py-2 rounded-sm bg-blue-500 cursor-pointer"
+						onClick={handleNext}>
+						Random
+					</button>
+				</section>
 			</section>
 		</main>
 	);
