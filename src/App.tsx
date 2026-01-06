@@ -5,7 +5,7 @@ function App() {
 	//current question
 	const [currentQuestion, setCurrentQuestion] = useState("");
 	//combineQuestion
-	const [comboQuestions, setComboQuestions] = useState([
+	const [comboQuestions] = useState([
 		...technicalQuestions,
 		...behaviorQuestions,
 	]);
