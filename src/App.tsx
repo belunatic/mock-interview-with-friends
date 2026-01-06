@@ -10,23 +10,20 @@ function App() {
 		...behaviorQuestions,
 	]);
 
-	useEffect(() => {
-		//get a random question
-		const getRandomQuestionNumber = () => {
-			const getNumber = Math.floor(Math.random() * comboQuestion.length);
-			console.log(getNumber);
-			//set the question to currentQuestion state
-			setCurrentQuestion(getNumber);
-		};
-
-		getRandomQuestionNumber();
-	}, []);
-
-	const handleNext = () => {
+	//get a random question
+	const getRandomQuestionNumber = () => {
 		const getNumber = Math.floor(Math.random() * comboQuestion.length);
 		console.log(getNumber);
 		//set the question to currentQuestion state
 		setCurrentQuestion(getNumber);
+	};
+
+	useEffect(() => {
+		getRandomQuestionNumber();
+	}, []);
+
+	const handleNext = () => {
+		getRandomQuestionNumber();
 	};
 
 	return (
