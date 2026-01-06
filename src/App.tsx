@@ -24,8 +24,10 @@ function App() {
 
 	return (
 		<section className="min-h-screen dark:bg-zinc-800 dark:text-white">
-			<main className="max-w-[85rem] h-screen w-auto flex justify-center items-center">
-				<h1>{currentQuestion ? comboQuestion[currentQuestion] : ""}</h1>
+			<main className="max-w-[85rem] h-screen w-auto flex justify-center items-center p-4">
+				<h1 className="text-2xl font-bold">
+					{currentQuestion ? comboQuestion[currentQuestion] : ""}
+				</h1>
 			</main>
 		</section>
 	);
