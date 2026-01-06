@@ -3,39 +3,53 @@ import { useState, useEffect } from "react";
 
 function App() {
 	//current question
-	const [currentQuestion, setCurrentQuestion] = useState<number | null>(null);
+	const [currentQuestion, setCurrentQuestion] = useState("");
 	//combineQuestion
-	const [comboQuestion, setComboQuestion] = useState([
+	const [comboQuestions, setComboQuestions] = useState([
 		...technicalQuestions,
 		...behaviorQuestions,
 	]);
 
 	//get a random question
-	const getRandomQuestionNumber = () => {
-		const getNumber = Math.floor(Math.random() * comboQuestion.length);
-		console.log(getNumber);
+	const getRandomQuestionNumber = (arr: string[]) => {
+		const getNumber = Math.floor(Math.random() * arr.length);
+		console.log(getNumber, arr[getNumber]);
 		//set the question to currentQuestion state
-		setCurrentQuestion(getNumber);
+		setCurrentQuestion(arr[getNumber]);
 	};
 
 	useEffect(() => {
-		getRandomQuestionNumber();
+		getRandomQuestionNumber(comboQuestions);
 	}, []);
 
 	const handleNext = () => {
-		getRandomQuestionNumber();
+		getRandomQuestionNumber(comboQuestions);
+	};
+	const technicalNext = () => {
+		getRandomQuestionNumber(technicalQuestions);
+	};
+	const behaviorNext = () => {
+		getRandomQuestionNumber(behaviorQuestions);
 	};
 
 	return (
 		<main className="min-h-screen dark:bg-zinc-800 dark:text-white">
 			<section className="max-w-[85rem] h-screen w-auto flex flex-col gap-y-8 justify-center items-center p-4">
-				<h1 className="text-2xl font-bold text-center">
-					{currentQuestion ? comboQuestion[currentQuestion] : ""}
-				</h1>
+				<h1 className="text-2xl font-bold text-center">{currentQuestion}</h1>
+				<button
+					className="px-4 py-2 rounded-sm bg-blue-500 cursor-pointer"
+					onClick={technicalNext}>
+					Technical
+				</button>
+				<button
+					className="px-4 py-2 rounded-sm bg-blue-500 cursor-pointer"
+					onClick={behaviorNext}>
+					Behavior
+				</button>
 				<button
 					className="px-4 py-2 rounded-sm bg-blue-500 cursor-pointer"
 					onClick={handleNext}>
-					Next
+					Random
 				</button>
 			</section>
 		</main>

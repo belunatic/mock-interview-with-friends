@@ -61,7 +61,6 @@ export const behaviorQuestions = [
 	"Tell me about a time when you worked with someone who was not completing their share of the work. How did you handle the situation?",
 	"Describe a situation when you worked effectively under pressure. What was going on, and how did you get through it?",
 	"Tell me about yourself.",
-	"Tell me about your experience at 100Devs.",
 	"What do you know about our company?",
 	"Why do you want to work for us?",
 	"Why are you interested in this opportunity?",
