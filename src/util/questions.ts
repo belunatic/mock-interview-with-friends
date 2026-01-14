@@ -47,6 +47,7 @@ export const technicalQuestions = [
 	"Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions?",
 	"What is different between NoSQL and SQL database? And have you face an difficulties and how did you handle it?",
 	"What different between Waterfall and Agile methodology?",
+	
 ];
 
 export const behaviorQuestions = [
@@ -71,6 +72,7 @@ export const behaviorQuestions = [
 	"What do you read on a regular basis?",
 	"What's some critical feedback you've gotten recently?",
 	"Do you have any questions?",
+	"Tell me the process of developing an application from a-z",
 
 	// TEAMWORK
 	"Share an experience when you collaborated closely with someone whose personality differed significantly from yours.",
