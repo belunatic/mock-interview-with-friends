@@ -45,6 +45,8 @@ export const technicalQuestions = [
 	"What is the event loop? What is the difference between the call stack and the task queue?",
 	"Explain the differences in usage between function foo() {} and var foo = function() {}.",
 	"Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions?",
+	"What is different between NoSQL and SQL database? And have you face an difficulties and how did you handle it?",
+	"What different between Waterfall and Agile methodology?",
 ];
 
 export const behaviorQuestions = [
