@@ -28,14 +28,14 @@ function HomePage() {
 
     const btnBase = "px-6 py-2.5 rounded-xl font-semibold transition-all active:scale-95 shadow-sm";
     const btnPrimary = `${btnBase} bg-blue-600 text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-200`;
-    const btnOutline = `${btnBase} border-2 border-gray-200 text-gray-700 hover:bg-gray-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-700`;
+    const btnOutline = `${btnBase} border-4 border-gray-800 text-gray-700 hover:bg-gray-50 dark:border-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-700`;
 
     return (
-        <main className="min-h-screen bg-gray-50 dark:bg-zinc-900 text-gray-900 dark:text-zinc-100 flex flex-col">
+        <main className="min-h-screen bg-gray-50 dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 flex flex-col">
             <section className="flex-grow flex flex-col items-center justify-center p-6">
                 <div className="w-full max-w-2xl">
                     {/* Flashcard Container */}
-                    <div className="bg-white dark:bg-zinc-800 rounded-3xl shadow-xl border border-gray-100 dark:border-zinc-700 p-8 md:p-12 mb-8 min-h-[400px] flex flex-col items-center justify-center text-center">
+                    <div className="bg-white dark:bg-zinc-700 rounded-3xl shadow-xl border border-gray-100 dark:border-zinc-700 p-8 md:p-12 mb-8 min-h-[400px] flex flex-col items-center justify-center text-center">
                         <span className="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4">Question</span>
                         
                         <h1 className="text-2xl md:text-3xl font-bold mb-8 leading-tight">
@@ -52,7 +52,7 @@ function HomePage() {
 
                         {/* Answer Area with subtle animation */}
                         <div className={`w-full overflow-hidden transition-all duration-300 ${showAnswer ? "opacity-100 max-h-[1000px]" : "opacity-0 max-h-0"}`}>
-                            <div className="pt-6 border-t border-gray-100 dark:border-zinc-700 text-gray-600 dark:text-zinc-400 italic">
+                            <div className="pt-6 border-t border-gray-100 dark:border-zinc-700 text-gray-900 dark:text-zinc-100 text-2xl ">
                                 {typeof currentQuestion !== "string" ? currentQuestion.answer : ''}
                             </div>
                         </div>
