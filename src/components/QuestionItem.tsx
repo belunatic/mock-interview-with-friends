@@ -17,10 +17,10 @@ export default function QuestionItem({ fq }: { fq: Question | string }) {
         <div>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition-colors"
+            className="w-full flex items-center justify-between p-5 text-left transition-colors"
           >
             <h3
-              className={`text-lg font-medium ${isOpen ? "text-blue-600" : "text-gray-200"}`}
+              className={`text-lg font-medium dark:text-zinc-200 ${isOpen ? "text-gray-900" : "text-gray-800"}`}
             >
               {fq.question}
             </h3>

@@ -5,9 +5,8 @@
 
 // type Question = {
 //   question: string;
-//   answer: string; 
+//   answer: string;
 // };
-
 
 // function SearchPage() {
 //   const [search, setSearch] = useState("");
@@ -96,7 +95,7 @@
 //   return (
 //     <main className="min-h-screen bg-white dark:bg-zinc-700 py-12 px-4 sm:px-6 lg:px-8 transition-colors">
 //       <div className="max-w-3xl mx-auto">
-        
+
 //         {/* Header/Status Section */}
 //         <header className="mb-10 text-center">
 //           <h1 className="text-3xl font-bold text-zinc-800 dark:text-zinc-100 mb-2">Search Results</h1>
@@ -160,7 +159,7 @@ import { technicalQuestions, behaviorQuestions } from "../util/questions";
 import { useSearchParams } from "react-router-dom";
 import { useMemo } from "react";
 // Import your sub-component
-import QuestionItem from "../components/QuestionItem"; 
+import QuestionItem from "../components/QuestionItem";
 
 function SearchPage() {
   const [searchParams] = useSearchParams();
@@ -169,7 +168,7 @@ function SearchPage() {
   const allFilteredItems = useMemo(() => {
     const behaviorWithAnswers = behaviorQuestions.map((q) => ({
       question: q,
-      answer: "No specific answer provided yet.", 
+      answer: "No specific answer provided yet.",
     }));
     return [...technicalQuestions, ...behaviorWithAnswers];
   }, []);
@@ -182,23 +181,32 @@ function SearchPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-900 py-12 px-4 sm:px-6 lg:px-8 transition-colors">
       <div className="max-w-3xl mx-auto">
-        
         <header className="mb-10 text-center">
-          <h1 className="text-3xl font-bold text-zinc-800 dark:text-zinc-100">Search Results</h1>
+          <h1 className="text-3xl font-bold text-zinc-800 dark:text-zinc-100">
+            Search Results
+          </h1>
           {query && <p className="text-zinc-500">Matches for: "{query}"</p>}
         </header>
 
         {query === "" ? (
-          <div className="text-center py-20 text-zinc-500">Type to start searching...</div>
+          <div className="text-center py-20 text-zinc-500">
+            Type to start searching...
+          </div>
         ) : filteredResults.length > 0 ? (
           /* CLEANER LIST: Using the QuestionItem component */
           <div className="space-y-4">
-            {filteredResults.map((item, index) => (
-              <QuestionItem key={index} fq={item} />
+            {filteredResults.map((item) => (
+              //   <QuestionItem key={index} fq={item} />
+              <QuestionItem
+                key={typeof item === "object" ? item.question : item}
+                fq={item}
+              />
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 italic text-zinc-500">No matches found.</div>
+          <div className="text-center py-20 italic text-zinc-500">
+            No matches found.
+          </div>
         )}
       </div>
     </main>
